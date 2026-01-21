@@ -9,9 +9,11 @@ gem "jekyll-polyglot"
 
 gem "html-proofer", "~> 5.0", group: :test
 
-platforms :mingw, :x64_mingw, :mswin, :jruby do
+# Use the generic :windows platform symbol (replaces :mingw, :x64_mingw, :mswin)
+platforms :windows, :jruby do
   gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
 end
 
-gem "wdm", "~> 0.2.0", :platforms => [:mingw, :x64_mingw, :mswin]
+# wdm only on Windows
+gem "wdm", "~> 0.2.0", platforms: :windows
